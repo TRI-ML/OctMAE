@@ -20,6 +20,11 @@ We present a 3D shape completion method that recovers the complete geometry of m
 ## News
 - 2024-07-01: OctMAE is accepted by ECCV 2024
 
+## Prerequisites
+- Docker
+- [Pigz](https://zlib.net/pigz/)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 ## Environment Setup
 
 ### Build a docker image
@@ -38,11 +43,11 @@ $ ./docker/run.sh
 
 ## Dataset Preparation
 
-Note that our training and evaluation datasets have 20TB and 22GB of data respectively and is assumed to be stored in an S3 bucket. Since [Webdataset](https://github.com/webdataset/webdataset) is used for training and evaluation, you need to download, unzip, and re-upload the shard files to your own S3 bucket. **Do not forget to replace `{your_s3_path}` in `configs/default.yaml` with your S3 path.**
+Note that our training and evaluation datasets have 20TB and 22GB of data respectively and is assumed to be stored in an S3 bucket. Since [Webdataset](https://github.com/webdataset/webdataset) is used for training and evaluation, you need to download, unzip, and re-upload the shard files to your own S3 bucket. **Do not forget to replace `{your_s3_path}` in `configs/default.yaml` and `eval.py` with your S3 path.** You can also download a tiny version of the training dataset (the first 10 shards of the training dataset) with `train_tiny` for visualization purposes.
 
 ```
 # Download, unzip, and re-upload the shard files.
-$ ./scripts/download.sh {your_data_path} {train|eval}
+$ ./scripts/download.sh {your_data_path} {train_tiny|train|eval}
 $ ./scripts/upload.sh {your_data_path} {train|eval} {your_s3_path}
 ```
 
@@ -60,9 +65,21 @@ $ ./scripts/train.sh {your_wandb_project_name} {your_wandb_run_name} ./configs/d
 ```
 
 ### Evaluation
+- Download a pre-trained checkpoint
 ```
-$ ./scripts/eval.sh ./configs/default.yaml {path_to_checkpoint_file} {eval_dataset_name (synth_eval, ycb_video, hb, hope)}
+$ mkdir checkpoints
+$ wget https://s3.amazonaws.com/tri-ml-public.s3.amazonaws.com/github/octmae/octmae.ckpt -P checkpoints/
 ```
+- Run evaluation
+```
+$ ./scripts/eval.sh ./configs/default.yaml checkpoints/octmae.ckpt {eval_dataset_name (synth_eval, ycb_video, hb, hope)}
+```
+
+### Visualizations
+COMING SOON!
+
+### Demo
+COMING SOON!
 
 ## Citation
 ```
@@ -75,4 +92,4 @@ $ ./scripts/eval.sh ./configs/default.yaml {path_to_checkpoint_file} {eval_datas
 ```
 
 ## License
-This repository is released under the [MIT](https://github.com/TRI-ML/OctMAE/blob/main/LICENSE.md) license.
+This repository is released under the [CC BY-NC 4.0](https://github.com/TRI-ML/OctMAE/blob/main/LICENSE.md) license.

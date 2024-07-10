@@ -33,12 +33,12 @@ INTRINSICS_K = {
     'hb': [[537.4799, 0.0, 318.8965], [0.0, 536.1447, 238.3781], [0.0, 0.0, 1.0]],
 }
 
-S3_URL = 's3://tri-ml-datasets/mirage_datasets_2/eval_datasets'
+S3_URL = 'your_s3_path'
 WDS_URL = {
-    'synth_eval': os.path.join(S3_URL, 'synth_eval', 'shard-{000000..000009}.tar'),
-    'ycb_video': os.path.join(S3_URL, 'ycb_video', 'shard-{000000..000009}.tar'),
-    'hope': os.path.join(S3_URL, 'hope', 'shard-000000.tar'),
-    'hb': os.path.join(S3_URL, 'hb', 'shard-{000000..000009}.tar'),
+    'synth_eval': os.path.join(S3_URL, 'eval', 'synth_eval', 'shard-{000000..000009}.tar'),
+    'ycb_video': os.path.join(S3_URL, 'eval', 'ycb_video', 'shard-{000000..000009}.tar'),
+    'hope': os.path.join(S3_URL, 'eval', 'hope', 'shard-000000.tar'),
+    'hb': os.path.join(S3_URL, 'eval', 'hb', 'shard-{000000..000009}.tar'),
 }
 
 def evaluate():

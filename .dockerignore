@@ -1,0 +1,6 @@
+data/
+docker/Dockerfile
+checkpoints/
+eval_results/
+wandb/
+.git/
