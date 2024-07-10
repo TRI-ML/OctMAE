@@ -1,0 +1,19 @@
+cmake
+lightning==2.2.3
+ninja
+ocnn==2.2.2
+open3d==0.18.0
+opencv-python==4.7.0.72
+pillow==10.2.0
+rotary-embedding-torch==0.3.5
+scikit-image==0.21.0
+scikit-learn==1.2.2
+scipy==1.10.1
+segmentation-models-pytorch
+siren-pytorch
+six==1.15.0
+torchmetrics
+tqdm==4.65.0
+trimesh==3.22.0
+wandb
+webdataset @ git+https://github.com/webdataset/webdataset.git@f11fd66c163722c607ec99475a6f3cb880ec35b8
