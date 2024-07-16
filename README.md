@@ -1,4 +1,4 @@
-# Zero-Shot Multi-Object Shape Completion (ECCV 2024)
+# Zero-Shot Multi-Object Scene Completion (ECCV 2024)
 
 ![OctMAE](assets/teaser.png)
 
@@ -15,7 +15,7 @@
 
 ## Abstract
 
-We present a 3D shape completion method that recovers the complete geometry of multiple objects in complex scenes from a single RGB-D image. Despite notable advancements in single object 3D shape completion, high-quality reconstructions in highly cluttered real-world multi-object scenes remains a challenge. To address this issue, we propose OctMAE, an architecture that leverages an Octree U-Net and a latent 3D MAE to achieve high-quality and near real-time multi-object shape completion through both local and global geometric reasoning. Because a naïve 3D MAE can be computationally intractable and memory intensive even in the latent space, we introduce a novel occlusion masking strategy and adopt 3D rotary embeddings, which significantly improves the runtime and shape completion quality. To generalize to a wide range of objects in diverse scenes, we create a large-scale photorealistic dataset, featuring a diverse set of 12K 3D object models from the Objaverse dataset which are rendered in multi-object scenes with physics-based positioning. Our method outperforms the current state-of-the-art on both synthetic and real-world datasets and demonstrates a strong zero-shot capability.
+We present a 3D scene completion method that recovers the complete geometry of multiple unseen objects in complex scenes from a single RGB-D image. Despite notable advancements in single-object 3D shape completion, high-quality reconstructions in highly cluttered real-world multi-object scenes remains a challenge. To address this issue, we propose OctMAE, an architecture that leverages an Octree U-Net and a latent 3D MAE to achieve high-quality and near real-time multi-object scene completion through both local and global geometric reasoning. Because a naive 3D MAE can be computationally intractable and memory intensive even in the latent space, we introduce a novel occlusion masking strategy and adopt 3D rotary embeddings, which significantly improves the runtime and scene completion quality. To generalize to a wide range of objects in diverse scenes, we create a large-scale photorealistic dataset, featuring a diverse set of 12K 3D object models from the Objaverse dataset which are rendered in multi-object scenes with physics-based positioning. Our method outperforms the current state-of-the-art on both synthetic and real-world datasets and demonstrates a strong zero-shot capability.
 
 ## News
 - 2024-07-01: OctMAE is accepted by ECCV 2024
@@ -85,7 +85,7 @@ COMING SOON!
 ```
 @InProceedings{Iwase_ECCV_2024,
   author = {Iwase, Shun and, Liu, Katherine and Guizilini, Vitor and Gaidon, Adrien and Kitani, Kris and Ambruș, Rareș and Zakharov, Sergey},
-  title = {Zero-Shot Multi-Object Shape Completion},
+  title = {Zero-Shot Multi-Object Scene Completion},
   booktitle = {ECCV},
   year = {2024}
 }
