@@ -2,7 +2,7 @@
 
 ![OctMAE](assets/teaser.png)
 
-**Zero-Shot Multi-Object Shape Completion**<br>
+**Zero-Shot Multi-Object Scene Completion**<br>
 [Shun Iwase](https://sh8.io/#/),
 [Katherine Liu](https://www.thekatherineliu.com/),
 [Vitor Guizilini](https://vitorguizilini.weebly.com/),
